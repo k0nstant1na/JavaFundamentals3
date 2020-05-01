@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Ui {
 
-    public Choice menu(){
-        Choice returnChoice;
+    public ChoiceProduct menu(){
+        ChoiceProduct returnChoice;
         System.out.println("1. Add a product to Basket   2. Remove a product" +
-                "    3. Display basket     4.  Clear basket     0. Exit" +
+                "    3. Display basket     4.  Clear basket  5. Count Total Cost 6. Save to file 7. Load from file  0. Exit" +
                 "");
 
         int choice;
@@ -15,19 +15,19 @@ public class Ui {
     try {
             choice = scanner.nextInt();
             switch(choice){
-                case 1: return Choice.ADD;
-                case 2: return Choice.REMOVE;
-                case 3: return Choice.DISPLAY;
-                case 4: return Choice.CLEAR;
-                case 5: return Choice.TOTALCOST;
-                case 6: return Choice.SAVE;
-                case 7: return Choice.LOAD;
-                case 0: return Choice.EXIT;
-                default:return Choice.ERROR;
+                case 1: return ChoiceProduct.ADD;
+                case 2: return ChoiceProduct.REMOVE;
+                case 3: return ChoiceProduct.DISPLAY;
+                case 4: return ChoiceProduct.CLEAR;
+                case 5: return ChoiceProduct.TOTALCOST;
+                case 6: return ChoiceProduct.SAVE;
+                case 7: return ChoiceProduct.LOAD;
+                case 0: return ChoiceProduct.EXIT;
+                default:return ChoiceProduct.ERROR;
             }
         }
     catch(Exception e){
-        return Choice.ERROR;
+        return ChoiceProduct.ERROR;
     }
 
     }
@@ -57,7 +57,7 @@ public class Ui {
 
 
     public void manageBasket(Basket basket){
-        Choice choice;
+        ChoiceProduct choice;
         do {
             choice =  menu();
 
@@ -94,7 +94,7 @@ public class Ui {
                     break;
 
             }
-        }while(choice!=Choice.EXIT);
+        }while(choice!= ChoiceProduct.EXIT);
 
     }
 

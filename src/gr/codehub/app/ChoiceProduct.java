@@ -1,6 +1,6 @@
 package gr.codehub.app;
 
-public enum Choice {
+public enum ChoiceProduct {
     EXIT,
     ADD,
     REMOVE,
